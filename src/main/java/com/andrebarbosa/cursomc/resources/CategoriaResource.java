@@ -20,9 +20,9 @@ public class CategoriaResource {
 	CategoriaService service;
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<Optional<Categoria>> find(@PathVariable Integer id) {
+	public ResponseEntity<Categoria> find(@PathVariable Integer id) {
 		
-		Optional<Categoria> obj = service.buscar(id);
+		Categoria obj = service.buscar(id);
 		
 		return ResponseEntity.ok().body(obj);
 	}
